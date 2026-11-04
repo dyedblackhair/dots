@@ -20,8 +20,7 @@ dotfiles/
 │   ├── matugen/            # config.toml, apply.sh, set-wallpaper.sh, templates/
 │   │                       #   (в templates/ — dunst, gtk, kde, kitty, mango, rofi, waybar)
 │   ├── gtk-3.0/, gtk-4.0/  # настройки и шаблон gtk.css
-│   ├── environment.d/      # GTK_THEME / QT_QPA_PLATFORMTHEME
-│   └── hypr/custom/        # хоткеи для Hyprland (порт из Mango, см. ниже)
+│   └── environment.d/      # GTK_THEME / QT_QPA_PLATFORMTHEME
 ├── home/                   # → ~/
 │   ├── .zshrc
 │   └── .local/bin/screenshot
@@ -90,44 +89,100 @@ Matugen обновляет Kitty, Waybar, Rofi, Dunst, GTK, KDE/Qt и цвета
 
 ## Горячие клавиши Mango
 
+Хоткеи собраны из [dots-hyprland](https://github.com/end-4/dots-hyprland)
+(end-4) и переведены в синтаксис Mango. Quickshell-специфичные бинды
+(сайдбар, медиапанель, эмодзи, читшит, экранная клавиатура, ИИ, OCR, запись
+экрана) не переносились — в Mango для них нет эквивалентов.
+
+### Система и приложения
+
 | Клавиши | Действие |
 |---|---|
-| `Super+T` | Kitty |
+| `Super+R` | перезагрузить конфиг Mango |
+| `Super+M` | выход |
+| `Super+Q` | закрыть окно |
+| `Super+Shift+Alt+Q` | принудительно закрыть окно |
+| `Ctrl+Alt+Delete` | меню питания (rofi) |
+| `Super+L` | заблокировать (swaylock) |
+| `Super+Shift+L` | сон |
+| `Ctrl+Shift+Alt+Super+Delete` | выключение |
 | `Alt+Space` | Rofi (запуск приложений) |
+| `Super+Return` / `Super+T` | Kitty |
+| `Ctrl+Alt+T` | Kitty |
 | `Super+E` | Dolphin |
 | `Super+W` | LibreWolf |
 | `Super+C` | VSCodium |
-| `Super+Shift+W` | выбор обоев |
-| `Print` / `Ctrl+Print` | скриншот области / всего экрана |
-| `Super+Q` | закрыть окно |
-| `Super+M` | выход |
-| `Super+1..9` | переключение тегов |
-| `Alt+1..9` | перенести окно на тег |
+| `Ctrl+Super+V` | pavucontrol |
+| `Ctrl+Shift+Escape` | btop в Kitty |
+| `Super+V` | история буфера обмена (cliphist + rofi) |
+| `Super+J` | скрыть/показать Waybar |
+| `Ctrl+Super+R` | перезапустить Waybar |
+
+### Обои и тема
+
+| Клавиши | Действие |
+|---|---|
+| `Super+Shift+W` / `Ctrl+Super+T` | выбрать обои |
+| `Ctrl+Super+Alt+T` | случайные обои |
+
+### Скриншоты и утилиты
+
+| Клавиши | Действие |
+|---|---|
+| `Print` / `Ctrl+Print` | скриншот всего экрана |
+| `Super+Shift+S` | скриншот области |
+| `Super+Shift+C` | пипетка цвета (hyprpicker) |
+
+### Окна
+
+| Клавиши | Действие |
+|---|---|
+| `Super+←/→/↑/↓`, `Super+[` / `]` | фокус |
+| `Super+Shift+←/→/↑/↓` | переместить окно |
+| `Alt+Tab` | фокус на следующее окно |
+| `Super+Alt+Space` / `Super+\` | плавающее окно |
+| `Super+D` / `Alt+A` | maximize |
+| `Super+F` | fullscreen |
+| `Super+Alt+F` / `Alt+Shift+F` | fake fullscreen |
+| `Super+P` / `Super+G` | pin (toggleglobal) |
+| `Super+O` | overlay |
+| `Super+I` / `Super+Shift+I` | minimize / restore |
+| `Super+;` / `Super+'` | изменить ratio |
+| `Alt+Shift+Return` | сменить направление сплита |
+| `Ctrl+Super+\` | сбросить размер окна до 640×480 |
+| `Super+Alt+←/→` | перенести окно на монитор |
+
+### Теги, scratchpad, раскладки
+
+| Клавиши | Действие |
+|---|---|
+| `Super+1..9` | переключить тег |
+| `Super+Alt+1..9` | отправить окно на тег без перехода |
+| `Alt+1..9` | отправить окно на тег и перейти |
+| `Ctrl+Super+←/→` | предыдущий / следующий тег |
+| `Super+Page_Up/Page_Down` | предыдущий / следующий тег |
+| `Super+Shift+Page_Up/Page_Down` | перенести окно на соседний тег |
+| `Super+S` / `Ctrl+Super+S` | показать/скрыть special-тег (scratchpad) |
+| `Super+Alt+S` | отправить окно в special-тег |
+| `Alt+Z` | обычный scratchpad |
+| `Super+N` | сменить layout |
+| `Super+Tab` | обзор (overview) |
+| `Alt+Shift+←/→` | фокус на монитор |
+
+### Медиа, зазоры, scroller
+
+| Клавиши | Действие |
+|---|---|
+| `XF86Audio*` | громкость / mute / микрофон / плеер |
+| `XF86MonBrightnessUp/Down` | яркость |
+| `Super+Shift+N/B/P` | next / previous / play-pause |
+| `Super+Shift+M` / `Super+Alt+M` | mute выхода / микрофона |
+| `Alt+Shift+X/Z` | увеличить / уменьшить зазоры |
+| `Alt+Shift+R` | включить/выключить зазоры |
+| `Alt+E`, `Alt+X` | scroller: ratio / preset |
+| `Ctrl+Alt+Super+←/→/↑/↓` | scroller: stack |
 
 Полный список — в `config/mango/config.conf`.
-
-## Горячие клавиши Hyprland
-
-Хоткеи из Mango перенесены в конфиг
-[dots-hyprland](https://github.com/end-4/dots-hyprland):
-
-```
-config/hypr/custom/keybinds.lua   # → ~/.config/hypr/custom/keybinds.lua
-```
-
-Файл загружается последним и переопределяет дефолтные бинды end-4. Чтобы
-поставить его, скопируй (или симлинкни) в `~/.config/hypr/custom/keybinds.lua`
-и перезагрузи Hyprland (`Super+R` или `hyprctl reload`).
-
-Что перенесено: запуск приложений и Rofi (`Alt+Space`), Spotify (`Super+S`),
-выбор обоев (`Super+Shift+W`), скриншоты (`Print` / `Ctrl+Print`), выход
-(`Super+M`), reload (`Super+R`), переключение и перенос окон, scratchpad
-(`Alt+Z`), перенос окна на воркспейс (`Alt+1..9`), мониторы, зазоры
-(`Alt+Shift+X/Z/R`), свободное перемещение/ресайз окна (`Ctrl+Shift+...`,
-`Ctrl+Alt+...`), maximize средней кнопкой мыши.
-
-Mango-only действия (scroller, minimize, switch_layout, toggleoverlay) и
-жесты не переносились — список с пояснениями есть в конце файла.
 
 
 ## Полезно

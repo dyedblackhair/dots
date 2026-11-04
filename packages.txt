@@ -13,6 +13,10 @@ swaybg
 grim
 slurp
 wl-clipboard
+cliphist
+swaylock
+hyprpicker
+brightnessctl
 libnotify
 xdg-desktop-portal
 xdg-desktop-portal-wlr
@@ -26,6 +30,8 @@ dunst
 cava
 matugen
 pavucontrol
+playerctl
+btop
 
 # --- audio ------------------------------------------------------------------
 pipewire
