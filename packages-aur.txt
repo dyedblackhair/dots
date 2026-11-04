@@ -1,0 +1,4 @@
+# AUR packages — installed with yay/paru if available.
+# MangoWC itself and the git build of Waybar (needed for mango/* modules).
+mangowm-git
+waybar-git

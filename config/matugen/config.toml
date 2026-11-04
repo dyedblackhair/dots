@@ -1,0 +1,50 @@
+# Matugen configuration for dynamic, wallpaper-derived dark themes.
+# The source color is the dominant color of the wallpaper (index 0),
+# so the palette follows the wallpaper instead of a random accent.
+
+[config]
+version_check = false
+fallback_color = "#7aa2f7"
+prefer = "saturation"
+caching = true
+contrast = 0.0
+source_color_index = 0
+
+# --- Kitty ---------------------------------------------------------------
+[templates.kitty]
+input_path = "templates/kitty.conf"
+output_path = "~/.config/kitty/current-theme.conf"
+
+# --- Waybar --------------------------------------------------------------
+[templates.waybar]
+input_path = "templates/waybar.css"
+output_path = "~/.config/waybar/style.css"
+
+# --- Rofi ----------------------------------------------------------------
+[templates.rofi]
+input_path = "templates/rofi.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+
+# --- GTK 3 / GTK 4 -------------------------------------------------------
+[templates.gtk3]
+input_path = "templates/gtk.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "templates/gtk.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+# --- MangoWC -------------------------------------------------------------
+[templates.mango]
+input_path = "templates/mango.conf"
+output_path = "~/.config/mango/theme.conf"
+
+# --- KDE / Qt (Dolphin and other KDE apps) -------------------------------
+[templates.kde]
+input_path = "templates/kdeglobals"
+output_path = "~/.config/kdeglobals"
+
+# --- Dunst (notifications) -----------------------------------------------
+[templates.dunst]
+input_path = "templates/dunst"
+output_path = "~/.config/dunst/dunstrc"

@@ -1,0 +1,129 @@
+@import "colors.rasi"
+
+configuration {
+    modes: "drun";
+    sorting-method: "normal";
+    show-icons: true;
+    matching: "regex";
+    drun-match-fields: "name";
+    display-run: "menu:";
+    display-drun: "Launch:";
+}
+
+* {
+    font: "JetBrains Mono 11";
+    background-color: transparent;
+    text-color: @on-surface-variant;
+
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+}
+
+window {
+    location: center;
+    width: 500;
+    y-offset: -20;
+
+    border-radius: 12px;
+    border: 0px;
+
+    background-color: @surface;
+}
+
+mainbox {
+    padding: 8px;
+    background-color: @surface;
+}
+
+inputbar {
+    background-color: @surface-container;
+    border-radius: 6px;
+    border: 0px;
+
+    padding: 8px 12px;
+    spacing: 8px;
+}
+
+prompt {
+    text-color: @primary;
+    background-color: transparent;
+}
+
+entry {
+    text-color: @on-surface-variant;
+    placeholder: "search";
+    placeholder-color: @outline;
+    background-color: transparent;
+}
+
+listview {
+    background-color: @surface;
+    margin: 8px 0 0;
+
+    columns: 1;
+    lines: 6;
+    fixed-height: false;
+}
+
+/* ===== Elements ===== */
+element {
+    padding: 8px 10px;
+    spacing: 6px;
+    border-radius: 6px;
+}
+
+element normal.normal {
+    background-color: @surface;
+    text-color: @on-surface-variant;
+}
+
+element alternate.normal {
+    background-color: @surface;
+    text-color: @on-surface-variant;
+}
+
+element normal.urgent {
+    background-color: @error-container;
+    text-color: @on-error-container;
+}
+
+element normal.active {
+    background-color: @surface;
+    text-color: @on-surface;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @surface-container-high;
+    text-color: @primary;
+}
+
+element selected.urgent {
+    background-color: @error-container;
+    text-color: @on-error-container;
+}
+
+element-icon {
+    size: 1em;
+    vertical-align: 0.5;
+    background-color: transparent;
+}
+
+element-text {
+    text-color: inherit;
+    background-color: transparent;
+}
+
+message {
+    margin: 8px 0 0;
+    border-radius: 8px;
+    border: 0px;
+
+    background-color: @surface;
+}
+
+textbox {
+    padding: 8px 16px;
+    background-color: @surface;
+}

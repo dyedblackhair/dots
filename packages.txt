@@ -1,0 +1,43 @@
+# Official Arch repositories — required for the desktop configs.
+# Install: sudo pacman -S --needed $(grep -v '^#' packages.txt)
+
+# --- base tools -------------------------------------------------------------
+git
+curl
+zsh
+eza
+polkit
+
+# --- Wayland / MangoWC session ---------------------------------------------
+swaybg
+grim
+slurp
+wl-clipboard
+libnotify
+xdg-desktop-portal
+xdg-desktop-portal-wlr
+xdg-user-dirs
+
+# --- bar, terminal and desktop apps ----------------------------------------
+waybar
+kitty
+rofi
+dunst
+cava
+matugen
+pavucontrol
+
+# --- audio ------------------------------------------------------------------
+pipewire
+pipewire-pulse
+wireplumber
+
+# --- fonts and icons --------------------------------------------------------
+ttf-jetbrains-mono-nerd
+ttf-googlesanscode-nerd
+ttf-firacode-nerd
+adwaita-icon-theme
+
+# --- zsh plugins (used by Oh My Zsh) ---------------------------------------
+zsh-autosuggestions
+zsh-syntax-highlighting

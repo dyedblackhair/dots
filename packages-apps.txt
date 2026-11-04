@@ -1,0 +1,7 @@
+# Optional desktop apps referenced by the Mango key bindings.
+# Enable with: ./install.sh --apps
+librewolf
+spotify-launcher
+dolphin
+ttf-google-sans
+vscodium-bin
