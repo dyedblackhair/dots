@@ -20,7 +20,8 @@ dotfiles/
 │   ├── matugen/            # config.toml, apply.sh, set-wallpaper.sh, templates/
 │   │                       #   (в templates/ — dunst, gtk, kde, kitty, mango, rofi, waybar)
 │   ├── gtk-3.0/, gtk-4.0/  # настройки и шаблон gtk.css
-│   └── environment.d/      # GTK_THEME / QT_QPA_PLATFORMTHEME
+│   ├── environment.d/      # GTK_THEME / QT_QPA_PLATFORMTHEME
+│   └── hypr/custom/        # хоткеи для Hyprland (порт из Mango, см. ниже)
 ├── home/                   # → ~/
 │   ├── .zshrc
 │   └── .local/bin/screenshot
@@ -104,6 +105,30 @@ Matugen обновляет Kitty, Waybar, Rofi, Dunst, GTK, KDE/Qt и цвета
 | `Alt+1..9` | перенести окно на тег |
 
 Полный список — в `config/mango/config.conf`.
+
+## Горячие клавиши Hyprland
+
+Хоткеи из Mango перенесены в конфиг
+[dots-hyprland](https://github.com/end-4/dots-hyprland):
+
+```
+config/hypr/custom/keybinds.lua   # → ~/.config/hypr/custom/keybinds.lua
+```
+
+Файл загружается последним и переопределяет дефолтные бинды end-4. Чтобы
+поставить его, скопируй (или симлинкни) в `~/.config/hypr/custom/keybinds.lua`
+и перезагрузи Hyprland (`Super+R` или `hyprctl reload`).
+
+Что перенесено: запуск приложений и Rofi (`Alt+Space`), Spotify (`Super+S`),
+выбор обоев (`Super+Shift+W`), скриншоты (`Print` / `Ctrl+Print`), выход
+(`Super+M`), reload (`Super+R`), переключение и перенос окон, scratchpad
+(`Alt+Z`), перенос окна на воркспейс (`Alt+1..9`), мониторы, зазоры
+(`Alt+Shift+X/Z/R`), свободное перемещение/ресайз окна (`Ctrl+Shift+...`,
+`Ctrl+Alt+...`), maximize средней кнопкой мыши.
+
+Mango-only действия (scroller, minimize, switch_layout, toggleoverlay) и
+жесты не переносились — список с пояснениями есть в конце файла.
+
 
 ## Полезно
 
