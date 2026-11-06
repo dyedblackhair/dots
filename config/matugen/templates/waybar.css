@@ -22,13 +22,11 @@ window#waybar {
 #wireplumber,
 #network,
 #clock,
-#tray,
 #layout,
 #language,
 #custom-launcher,
 #custom-lock,
 #custom-notification,
-#custom-tray-menu,
 #custom-power {
     background: transparent;
     border: none;

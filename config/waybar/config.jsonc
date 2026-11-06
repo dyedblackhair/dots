@@ -17,8 +17,6 @@
     "battery",
     "clock",
     "mango/language",
-    "tray",
-    "custom/tray-menu",
     "custom/notification",
     "custom/lock",
     "custom/power"
@@ -72,18 +70,6 @@
     "max-length": 60,
     "tooltip": true,
     "player": "spotify"
-  },
-
-  "tray": {
-    "icon-size": 16,
-    "spacing": 6,
-    "show-passive-items": true
-  },
-
-  "custom/tray-menu": {
-    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf0c9</span>",
-    "tooltip": false,
-    "on-click": "@HOME@/.config/waybar/scripts/tray-menu.py"
   },
 
   "network": {
