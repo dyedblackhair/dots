@@ -18,6 +18,7 @@
     "clock",
     "mango/language",
     "tray",
+    "custom/tray-menu",
     "custom/notification",
     "custom/lock",
     "custom/power"
@@ -51,14 +52,14 @@
     "on-click": "activate",
     "hide-empty": true,
     "format-icons": {
-      "default": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf111</span>",
-      "active": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf111</span>",
-      "urgent": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf071</span>"
+      "default": "○",
+      "active": "●",
+      "urgent": "●"
     }
   },
 
   "mango/layout": {
-    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf009</span> {}"
+    "format": "{}"
   },
 
   "mango/language": {
@@ -77,6 +78,12 @@
     "icon-size": 16,
     "spacing": 6,
     "show-passive-items": true
+  },
+
+  "custom/tray-menu": {
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf0c9</span>",
+    "tooltip": false,
+    "on-click": "@HOME@/.config/waybar/scripts/tray-menu.py"
   },
 
   "network": {
