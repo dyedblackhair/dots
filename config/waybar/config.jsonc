@@ -17,6 +17,7 @@
     "battery",
     "clock",
     "mango/language",
+    "tray",
     "custom/notification",
     "custom/lock",
     "custom/power"
@@ -70,6 +71,12 @@
     "max-length": 60,
     "tooltip": true,
     "player": "spotify"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 6,
+    "show-passive-items": true
   },
 
   "network": {
