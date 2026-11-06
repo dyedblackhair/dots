@@ -13,7 +13,8 @@ dotfiles/
 ├── packages-apps.txt       # необязательные приложения (--apps)
 ├── config/                 # → ~/.config/*
 │   ├── mango/              # config.conf (тема генерируется matugen)
-│   ├── waybar/             # config.jsonc + scripts/
+│   ├── waybar/             # config.jsonc (сеть, трей, Font Awesome) + scripts/
+│   ├── dolphinrc           # настройки Dolphin (из dots-hyprland)
 │   ├── kitty/              # kitty.conf (тема из matugen)
 │   ├── rofi/               # config.rasi + tokyo.rasi
 │   ├── cava/               # config, темы и шейдеры
@@ -86,6 +87,14 @@ cd ~/dotfiles
 
 Matugen обновляет Kitty, Waybar, Rofi, Dunst, GTK, KDE/Qt и цвета MangoWC.
 Шаблоны лежат в `config/matugen/templates/`.
+
+## Waybar и Dolphin
+
+- Waybar использует **Google Sans** и иконки **Font Awesome**.
+- В правой части бара: сеть (клик открывает `nmtui`), трей, громкость,
+  яркость, батарея, часы, раскладка, уведомления, блокировка и питание.
+- `config/dolphinrc` перенесён из dots-hyprland: полный путь в адресной
+  строке, включённые превью, скрытая строка меню.
 
 ## Горячие клавиши Mango
 

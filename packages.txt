@@ -42,6 +42,7 @@ wireplumber
 ttf-jetbrains-mono-nerd
 ttf-googlesanscode-nerd
 ttf-firacode-nerd
+otf-font-awesome
 adwaita-icon-theme
 
 # --- zsh plugins (used by Oh My Zsh) ---------------------------------------

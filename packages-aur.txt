@@ -2,3 +2,5 @@
 # MangoWC itself and the git build of Waybar (needed for mango/* modules).
 mangowm-git
 waybar-git
+# Google Sans for Waybar and the desktop UI.
+ttf-google-sans

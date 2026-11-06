@@ -7,24 +7,21 @@
   "margin-left": 400,
   "margin-right": 400,
 
-  "modules-left": ["mango/workspaces","mango/layout"],
+  "modules-left": ["mango/workspaces", "mango/layout"],
   "modules-center": ["mpris"],
 
   "modules-right": [
+    "network",
     "wireplumber",
     "backlight",
     "battery",
     "clock",
     "mango/language",
+    "tray",
     "custom/notification",
     "custom/lock",
     "custom/power"
   ],
-
-  "custom/tab": {
-    "format": "[Z]",
-    "on-click": "rofi -show drun"
-  },
 
   "custom/notification": {
     "format": "{}",
@@ -37,8 +34,14 @@
     "on-click-middle": "dunstctl history-pop"
   },
 
+  "custom/lock": {
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf023</span>",
+    "tooltip": false,
+    "on-click": "swaylock -f -c 000000"
+  },
+
   "custom/power": {
-    "format": " ",
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf011</span>",
     "tooltip": false,
     "on-click": "@HOME@/.config/waybar/scripts/power-menu.sh"
   },
@@ -48,23 +51,23 @@
     "on-click": "activate",
     "hide-empty": true,
     "format-icons": {
-      "default": "○",
-      "active": "●",
-      "urgent": "●"
+      "default": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf111</span>",
+      "active": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf111</span>",
+      "urgent": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf071</span>"
     }
   },
 
   "mango/layout": {
-	"format": "{}"
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf009</span> {}"
   },
-  
+
   "mango/language": {
-  	"format": "{short}"
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf0ac</span> {short}"
   },
 
   "mpris": {
-    "format": " {artist} - {title} ",
-    "format-paused": "󰐊 {artist} - {title} ",
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf04c</span> {artist} - {title} ",
+    "format-paused": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf04b</span> {artist} - {title} ",
     "max-length": 60,
     "tooltip": true,
     "player": "spotify"
@@ -72,29 +75,67 @@
 
   "tray": {
     "icon-size": 16,
-    "spacing": 6
+    "spacing": 6,
+    "show-passive-items": true
+  },
+
+  "network": {
+    "interval": 3,
+    "format-wifi": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf1eb</span> {essid}",
+    "format-ethernet": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf6ff</span> {ifname}",
+    "format-linked": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf6ff</span> {ifname}",
+    "format-disconnected": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf071</span>",
+    "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n{essid}\n{signalStrength}%",
+    "on-click": "kitty -e nmtui"
   },
 
   "wireplumber": {
     "scroll-step": 5,
     "format": "{icon} {volume}%",
-    "format-muted": "󰝟 muted",
+    "format-muted": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf026</span> muted",
     "on-click": "pavucontrol",
     "format-icons": {
-      "default": ["󰕿", "󰖀", "󰕾"],
-      "headphones": "󰋋",
-      "headset": "󰋎"
+      "default": [
+        "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf026</span>",
+        "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf027</span>",
+        "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf028</span>"
+      ],
+      "headphones": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf025</span>",
+      "headset": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf590</span>"
     }
   },
 
-  "clock": {
-    "format": "{:%H:%M}"
+  "backlight": {
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf185</span> {percent}%",
+    "scroll-step": 5
   },
 
-  /*"custom/lock": {
-    "format": " ",
-    "on-click": "pkill -u $USER",
-    "tooltip": true,
-    "tooltip-format": "Lock Screen"
-  }*/
+  "battery": {
+    "interval": 30,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf0e7</span> {capacity}%",
+    "format-plugged": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf0e7</span> {capacity}%",
+    "tooltip-format": "{timeTo}\n{capacity}%",
+    "format-icons": [
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf244</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf244</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf243</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf243</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf242</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf242</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf241</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf241</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf240</span>",
+      "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf240</span>"
+    ]
+  },
+
+  "clock": {
+    "format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf017</span> {:%H:%M}",
+    "tooltip-format": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf073</span> {:%A, %d %B %Y}"
+  }
 }
