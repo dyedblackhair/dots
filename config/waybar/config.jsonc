@@ -81,7 +81,7 @@
 
   "network": {
     "interval": 3,
-    "format-wifi": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf1eb</span> {essid}",
+    "format-wifi": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf1eb</span> {signalStrength}%",
     "format-ethernet": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf6ff</span> {ifname}",
     "format-linked": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf6ff</span> {ifname}",
     "format-disconnected": "<span font_family='Font Awesome 6 Free, Font Awesome 7 Free' font_weight='900'>\uf071</span>",
